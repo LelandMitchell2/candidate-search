@@ -63,7 +63,7 @@ const CandidateSearch = () => {
     if (candidate) {
       const updatedCandidates = [...savedCandidates, candidate];
       setSavedCandidates(updatedCandidates);
-      localStorage.setItem('candidates', JSON.stringify(updatedCandidates));
+      localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
     }
     fetchRandomCandidates();
   };

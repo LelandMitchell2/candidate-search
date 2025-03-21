@@ -23,13 +23,11 @@ const SavedCandidates = () => {
           <thead>
             <tr>
               <th>Avatar</th>
-              <th>Name</th>
-              <th>Username</th>
+              <th>Name (Username)</th>
+              {/* <th>Username</th> */}
               <th>Location</th>
               <th>Email</th>
-              <th>Repos</th>
-              <th>Followers</th>
-              <th>Following</th>
+              <th>Bio</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -47,17 +45,15 @@ const SavedCandidates = () => {
                 </td>
                 <td>
                   <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-                    {candidate.name || "No name provided"}
+                    {candidate.name || "No name provided"} ({candidate.login})
                   </a>
                 </td>
-                <td>{candidate.login}</td>
+                {/* <td>{candidate.login}</td> */}
                 <td>{candidate.location || "Unknown"}</td>
                 <td>{candidate.email || "Not provided"}</td>
-                <td>{candidate.public_repos}</td>
-                <td>{candidate.followers}</td>
-                <td>{candidate.following}</td>
+                <td>{candidate.bio || "Not provided"}</td>
                 <td>
-                  <button onClick={() => removeCandidate(candidate.login)}>Remove</button>
+                  <button className='reject' onClick={() => removeCandidate(candidate.login)}>-</button>
                 </td>
               </tr>
             ))}
