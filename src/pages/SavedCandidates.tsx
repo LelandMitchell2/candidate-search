@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Candidate from "../interfaces/Candidate.interface";
+import { IoRemoveCircle } from 'react-icons/io5';
 
 const SavedCandidates = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
@@ -24,7 +25,6 @@ const SavedCandidates = () => {
             <tr>
               <th>Avatar</th>
               <th>Name (Username)</th>
-              {/* <th>Username</th> */}
               <th>Location</th>
               <th>Email</th>
               <th>Bio</th>
@@ -48,12 +48,11 @@ const SavedCandidates = () => {
                     {candidate.name || "No name provided"} ({candidate.login})
                   </a>
                 </td>
-                {/* <td>{candidate.login}</td> */}
                 <td>{candidate.location || "Unknown"}</td>
                 <td>{candidate.email || "Not provided"}</td>
                 <td>{candidate.bio || "Not provided"}</td>
                 <td>
-                  <button className='reject' onClick={() => removeCandidate(candidate.login)}>-</button>
+                  <IoRemoveCircle  style={{ fontSize: '50px', cursor: 'pointer', color: 'rgb(255, 0, 0)'}} onClick={() => removeCandidate(candidate.login)} />
                 </td>
               </tr>
             ))}
