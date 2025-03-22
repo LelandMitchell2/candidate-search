@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   envDir: './environment',
   plugins: [react()],
-  plugins: [react()],
   resolve: {
     alias: {
       '@components': '/src/components',  // Add this alias for components
@@ -19,7 +18,7 @@ export default defineConfig({
     port: Number(process.env.PORT) || 3000, // Use the PORT provided by Render, fallback to 3000
   },
   preview: {
-    allowedHosts: ['candidate-search-app-rc2q.onrender.com'], // Add this host to allowed hosts
+    allowedHosts: ['candidate-search-5kq5.onrender.com'], // Add this host to allowed hosts
   },
 }); 
 
