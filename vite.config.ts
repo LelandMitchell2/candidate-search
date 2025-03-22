@@ -6,6 +6,6 @@ export default defineConfig({
   envDir: './environment',
   plugins: [react()],
 
-server: {
+preview: {
   allowedHosts: ['candidate-search-5kq5.onrender.com'],
 },});
