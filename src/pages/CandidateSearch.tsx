@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from '../interfaces/Candidate.interface';
+import { IoAddCircle, IoRemoveCircle } from 'react-icons/io5';
 
 const CandidateSearch = () => {
   const [candidate, setCandidate] = useState<Candidate | null>(null);
@@ -90,20 +91,21 @@ const CandidateSearch = () => {
     {loading ? (
       <p>Loading...</p>
     ): candidate ? (
-        <div className="card">
-          <img src={candidate.avatar_url} alt={candidate.name} className='avatar'/>
-          <div className='card-content'></div>
+        <><div className="card">
+            <img src={candidate.avatar_url} alt={candidate.name} className='avatar' />
+            <div className='card-content'></div>
             <h2>{candidate.name || 'No name provided'} (@{candidate.login})</h2>
             <p>Location: {candidate.location || 'Unknown'}</p>
             <p>Company: {candidate.company || 'Not Provided'}</p>
             <p>Email: {candidate.email || 'Not Provided'}</p>
             <p className='bio'>Bio: {candidate.bio || 'Not Provided'}</p>
             <a href={candidate.html_url}>Github Profile</a>
-            <div>
-              <button className='accept' onClick={saveCandidate}>+</button>
-              <button className='reject' onClick={skipCandidate}>-</button>
-            </div>
-        </div>
+          </div>
+          <div>
+            <IoRemoveCircle  style={{ fontSize: '75px', cursor: 'pointer', color: 'rgb(255, 0, 0)', marginRight: '300px' }} onClick={() => skipCandidate?.()} />
+            <IoAddCircle style={{ fontSize: '75px', cursor: 'pointer', color: 'rgb(0, 255, 34)'}} onClick={() => saveCandidate?.()} />
+          </div></>
+        
       ) : (
         <p>No candidates found</p>
       )
