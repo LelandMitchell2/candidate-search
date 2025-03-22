@@ -27,8 +27,9 @@ const SavedCandidates = () => {
               <th>Name (Username)</th>
               <th>Location</th>
               <th>Email</th>
+              <th>Company</th>
               <th>Bio</th>
-              <th>Actions</th>
+              <th>Reject</th>
             </tr>
           </thead>
           <tbody>
@@ -50,9 +51,10 @@ const SavedCandidates = () => {
                 </td>
                 <td>{candidate.location || "Unknown"}</td>
                 <td>{candidate.email || "Not provided"}</td>
+                <td>{candidate.company || "Not Provided"}</td>
                 <td>{candidate.bio || "Not provided"}</td>
                 <td>
-                  <IoRemoveCircle  style={{ fontSize: '50px', cursor: 'pointer', color: 'rgb(255, 0, 0)'}} onClick={() => removeCandidate(candidate.login)} />
+                  <IoRemoveCircle  style={{ fontSize: '75px', cursor: 'pointer', color: '#ff0000'}} onClick={() => removeCandidate(candidate.login)} />
                 </td>
               </tr>
             ))}
