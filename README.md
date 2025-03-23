@@ -14,6 +14,8 @@
   ## Installation
   navigate to: https://candidate-search-5kq5.onrender.com/
 
+  ![alt text](<Screenshot 2025-03-22 204035.png>)
+
   ## Usage
   N/A
 
