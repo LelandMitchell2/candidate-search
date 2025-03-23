@@ -20,3 +20,4 @@ export default defineConfig({
   preview: {
     allowedHosts: ['candidate-search-5kq5.onrender.com'], // Add this host to allowed hosts
   },
+});
